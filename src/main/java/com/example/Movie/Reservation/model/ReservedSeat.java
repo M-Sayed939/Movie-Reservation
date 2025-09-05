@@ -18,6 +18,6 @@ public class ReservedSeat {
     @ManyToOne
     @JoinColumn(name="showtime_id", nullable = false)
     private ShowTime showTime;
-    @Column(nullable = false)
+    @Column(name = "seat_Number", nullable = false)
     private String seatNumber;
 }

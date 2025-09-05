@@ -6,6 +6,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.time.LocalDateTime;
+import java.util.List;
 
 @Entity
 @Table(name = "reservations")
@@ -26,4 +27,7 @@ public class Reservation {
     private ReservationStatus status = ReservationStatus.BOOKED;
     @Column(nullable = false)
     private LocalDateTime date = LocalDateTime.now();
+
+    @OneToMany(mappedBy = "reservation", cascade = CascadeType.ALL)
+    private List<ReservedSeat> reservedSeats;
 }

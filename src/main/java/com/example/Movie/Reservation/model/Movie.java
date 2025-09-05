@@ -18,6 +18,8 @@ public class Movie {
     private UUID id;
     @Column(nullable = false)
     private String title;
+    @Column(unique = true)
+    private String imdbId;
     private String description;
     private String posterUrl;
     @Column(nullable = false)

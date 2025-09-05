@@ -19,8 +19,8 @@ public class ShowTime {
     @JoinColumn(name="movie_id", nullable = false)
     private Movie movie;
     @ManyToOne
-    @JoinColumn(name="theater_id", nullable = false)
-    private Theater theater;
+    @JoinColumn(name="cinemaHall_id", nullable = false)
+    private CinemaHall cinemaHall;
 
     @Column(nullable = false)
     private LocalDateTime startTime;
