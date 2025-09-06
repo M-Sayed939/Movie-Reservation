@@ -1,6 +1,5 @@
 package com.example.Movie.Reservation.model;
 
-import com.example.Movie.Reservation.dto.Role;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
