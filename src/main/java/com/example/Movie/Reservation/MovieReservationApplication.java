@@ -31,9 +31,8 @@ public class MovieReservationApplication {
 				adminUser.setPassword(passwordEncoder.encode("adminpassword"));
 				adminUser.setRole(Role.ROLE_ADMIN);
 				userRepository.save(adminUser);
-				System.out.println("Admin user created!");
+				System.out.println("Admin user created with encoded password!");
 			}
 		};
 	}
-
 }

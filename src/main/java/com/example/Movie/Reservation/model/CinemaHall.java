@@ -5,7 +5,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 @Entity
-@Table(name = "theaters")
+@Table(name = "cinema_halls")
 @Data
 @NoArgsConstructor
 public class CinemaHall {
@@ -15,6 +15,8 @@ public class CinemaHall {
     @Column(nullable = false)
     private String name;
     @Column(nullable = false)
-    private int totalSets;
+    private int seatRows;
+    @Column(nullable = false)
+    private int seatColumns;
 
 }

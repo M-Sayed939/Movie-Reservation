@@ -11,10 +11,10 @@ import java.util.UUID;
 
 
 public interface ShowTimeRepository extends JpaRepository<ShowTime,Long> {
-   List<ShowTime> findByMovieIdAndStartTimeBetween(UUID movieId, LocalDateTime startTime, LocalDateTime endTime);
+   List<ShowTime> findByMovieIdAndStartTimeBetween(Long movieId, LocalDateTime startTime, LocalDateTime endTime);
     @Query("SELECT s FROM ShowTime s WHERE s.movie.id = :movieId AND s.startTime BETWEEN :startOfDay AND :endOfDay AND s.startTime > :currentTime")
     List<ShowTime> findUpcomingShowtimesByMovieAndDate(
-            @Param("movieId") UUID movieId,
+            @Param("movieId") Long movieId,
             @Param("startOfDay") LocalDateTime startOfDay,
             @Param("endOfDay") LocalDateTime endOfDay,
             @Param("currentTime") LocalDateTime currentTime

@@ -24,6 +24,8 @@ public class ShowTime {
 
     @Column(nullable = false)
     private LocalDateTime startTime;
+    @Column(nullable = false)
+    private LocalDateTime endTime;
 
     @Column(nullable = false)
     private BigDecimal price;

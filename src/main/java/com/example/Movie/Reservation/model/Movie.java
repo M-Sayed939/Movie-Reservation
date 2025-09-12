@@ -14,16 +14,17 @@ import java.util.UUID;
 @NoArgsConstructor
 public class Movie {
     @Id
-    @GeneratedValue(strategy = GenerationType.UUID)
-    private UUID id;
+//    private UUID id;
+    private Long id;
     @Column(nullable = false)
     private String title;
     @Column(unique = true)
     private String imdbId;
+    @Column(length = 2000)
     private String description;
     private String posterUrl;
     @Column(nullable = false)
-    private int duration; // duration in minutes
+    private int duration;
 
     @ManyToMany(fetch = FetchType.EAGER)
     @JoinTable(
