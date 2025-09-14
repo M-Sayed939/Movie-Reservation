@@ -19,8 +19,8 @@ import java.util.List;
 public class MovieAdminController {
     @Autowired
     private MovieService movieService;
-    @Autowired
-    private TmdbService tmdbService;
+//    @Autowired
+//    private TmdbService tmdbService;
 //    private OmdbService omdbService;
 //
 //    @GetMapping("/omdb/{imdbId}")

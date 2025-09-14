@@ -1,5 +1,6 @@
 package com.example.Movie.Reservation.controller;
 
+import com.example.Movie.Reservation.dto.ApiResponse;
 import com.example.Movie.Reservation.dto.JwtAuthenticationResponse;
 import com.example.Movie.Reservation.dto.LoginRequest;
 import com.example.Movie.Reservation.dto.SignUpRequest;
@@ -9,7 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-@CrossOrigin(origins = "http://localhost:4200")
+//@CrossOrigin(origins = "http://localhost:4200")
 @RestController
 @RequestMapping("/api/auth")
 public class AuthController {
@@ -19,7 +20,7 @@ public class AuthController {
     @PostMapping("/signup")
     public ResponseEntity<?> registerUser(@Valid @RequestBody SignUpRequest signUpRequest) {
         authenticationService.signUp(signUpRequest);
-        return ResponseEntity.ok("User registered successfully");
+        return ResponseEntity.ok(new ApiResponse("User registered successfully", true));
     }
     @PostMapping("/login")
     public ResponseEntity<JwtAuthenticationResponse> authenticateUser(@Valid @RequestBody LoginRequest loginRequest) {

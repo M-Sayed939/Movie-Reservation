@@ -17,31 +17,31 @@ import java.util.stream.Collectors;
 
 @RestController
 @RequestMapping("/api")
-@CrossOrigin(origins = "http://localhost:4200")
+//@CrossOrigin(origins = "http://localhost:4200")
 public class ReservationController {
     @Autowired
     private ReservationService reservationService;
 
-    @GetMapping("/showtimes/{showtimeId}/seats")
-    public ResponseEntity<SeatAvailabilityDto> getSeatAvailability(@PathVariable Long showtimeId) {
-        return ResponseEntity.ok(reservationService.getSeatAvailability(showtimeId));
-    }
+//    @GetMapping("/showtimes/{showtimeId}/seats")
+//    public ResponseEntity<SeatAvailabilityDto> getSeatAvailability(@PathVariable Long showtimeId) {
+//        return ResponseEntity.ok(reservationService.getSeatAvailability(showtimeId));
+//    }
 
     @PostMapping("/reservations")
     public ResponseEntity<ReservationResponseDto> createReservation(
             @Valid @RequestBody CreateReservationRequest reservationRequest,
             @AuthenticationPrincipal UserDetails userDetails) {
-        Reservation reservation = reservationService.createReservation(reservationRequest, userDetails.getUsername());
-        return ResponseEntity.ok(new ReservationResponseDto(reservation));
+        ReservationResponseDto response = reservationService.createReservation(reservationRequest, userDetails.getUsername());
+        return ResponseEntity.ok(response);
     }
 
     // Endpoint for a logged-in user to view their own reservations
     @GetMapping("/reservations/my-reservations")
     public ResponseEntity<List<ReservationResponseDto>> getMyReservations(@AuthenticationPrincipal UserDetails userDetails) {
-        List<Reservation> reservations = reservationService.getMyReservations(userDetails.getUsername());
-        List<ReservationResponseDto> responseDtos = reservations.stream()
-                .map(ReservationResponseDto::new)
-                .collect(Collectors.toList());
-        return ResponseEntity.ok(responseDtos);
+        List<ReservationResponseDto> reservations = reservationService.getMyReservations(userDetails.getUsername());
+//        List<ReservationResponseDto> responseDtos = reservations.stream()
+//                .map(ReservationResponseDto::new)
+//                .collect(Collectors.toList());
+        return ResponseEntity.ok(reservations);
     }
 }

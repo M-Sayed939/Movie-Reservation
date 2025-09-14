@@ -13,7 +13,7 @@ import java.time.LocalDate;
 import java.util.List;
 import java.util.UUID;
 
-@CrossOrigin(origins = "http://localhost:4200")
+//@CrossOrigin(origins = "http://localhost:4200")
 @RestController
 @RequestMapping("/api/movies")
 public class MovieController {
@@ -30,7 +30,7 @@ public class MovieController {
     public ResponseEntity<MovieResponseDto> getMovieById(@PathVariable("id") Long id) {
         return movieService.getMovieById(id).map(ResponseEntity::ok).orElse(ResponseEntity.notFound().build());
     }
-    @GetMapping("/{movieid}/showtimes")
+    @GetMapping("/{movieId}/showtimes")
     public ResponseEntity<List<ShowTimeResponseDto>> getShowtimesForMovieAndDate(
             @PathVariable Long movieId,
             @RequestParam @DateTimeFormat(iso = DateTimeFormat.ISO.DATE) LocalDate date) {
