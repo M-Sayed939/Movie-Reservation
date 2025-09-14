@@ -6,11 +6,11 @@ This backend is the engine for the **[Angular Frontend](https://github.com/M-Say
 
 ## Table of Contents
 
-1.  [Preview](https://www.google.com/search?q=%23preview)
-2.  [Features](https://www.google.com/search?q=%23features-)
-3.  [Technology Stack](https://www.google.com/search?q=%23technology-stack-)
-4.  [Getting Started](https://www.google.com/search?q=%23getting-started-)
-5.  [API Endpoints](https://www.google.com/search?q=%23api-endpoints-)
+1.  [Preview](#preview)
+2.  [Features](#features-)
+3.  [Technology Stack](#technology-stack-)
+4.  [Getting Started](#getting-started-)
+5.  [API Endpoints](#api-endpoints-)
 
 ## Preview
 
